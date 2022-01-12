@@ -2,6 +2,6 @@
 
 class_SecOC SecOC;
 
-void class_SecOC::InitFunction(void){
+FUNC(void, SECOC_CODE) class_SecOC::InitFunction(void){
 }
 
