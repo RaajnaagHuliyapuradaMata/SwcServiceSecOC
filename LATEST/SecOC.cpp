@@ -8,6 +8,8 @@
 /*****************************************************/
 #include "SecOC.h"
 
+#include "SecOC_EcuM.h"
+
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -31,15 +33,17 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
+class_SecOC_EcuM SecOC_EcuM;
+class_EcuM_Client *EcuM_Client_ptr_SecOC = &SecOC_EcuM;
 class_SecOC SecOC;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, SECOC_CODE) class_SecOC::InitFunction(void){
+FUNC(void, SECOC_CODE) class_SecOC_EcuM::InitFunction(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::DeInitFunction(void){
+FUNC(void, SECOC_CODE) class_SecOC_EcuM::DeInitFunction(void){
 }
 
 FUNC(void, SECOC_CODE) class_SecOC::GetVersionInfo(void){

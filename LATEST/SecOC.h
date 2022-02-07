@@ -26,8 +26,6 @@ class class_SecOC{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, SECOC_CODE) InitFunction                   (void);
-      FUNC(void, SECOC_CODE) DeInitFunction                 (void);
       FUNC(void, SECOC_CODE) GetVersionInfo                 (void);
       FUNC(void, SECOC_CODE) IfTransmit                     (void);
       FUNC(void, SECOC_CODE) TpTransmit                     (void);
