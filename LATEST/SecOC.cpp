@@ -9,9 +9,13 @@
 #include "SecOC.h"
 
 #include "SecOC_EcuM.h"
+#include "SecOCRx_SchM.h"
+#include "SecOCTx_SchM.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
+/*****************************************************/
+
 /*****************************************************/
 
 /*****************************************************/
@@ -35,6 +39,10 @@
 /*****************************************************/
 class_SecOC_EcuM SecOC_EcuM;
 class_EcuM_Client *EcuM_Client_ptr_SecOC = &SecOC_EcuM;
+class_SecOCRx_SchM SecOCRx_SchM;
+class_SchM_Client *SchM_Client_ptr_SecOCRx = &SecOCRx_SchM;
+class_SecOCTx_SchM SecOCTx_SchM;
+class_SchM_Client *SchM_Client_ptr_SecOCTx = &SecOCTx_SchM;
 class_SecOC SecOC;
 
 /*****************************************************/
@@ -44,6 +52,12 @@ FUNC(void, SECOC_CODE) class_SecOC_EcuM::InitFunction(void){
 }
 
 FUNC(void, SECOC_CODE) class_SecOC_EcuM::DeInitFunction(void){
+}
+
+FUNC(void, SECOC_CODE) class_SecOCRx_SchM::MainFunction(void){
+}
+
+FUNC(void, SECOC_CODE) class_SecOCTx_SchM::MainFunction(void){
 }
 
 FUNC(void, SECOC_CODE) class_SecOC::GetVersionInfo(void){
@@ -113,12 +127,6 @@ FUNC(void, SECOC_CODE) class_SecOC::CalloutGetTxFreshnessTruncData(void){
 }
 
 FUNC(void, SECOC_CODE) class_SecOC::CalloutSPduTxConfirmation(void){
-}
-
-FUNC(void, SECOC_CODE) class_SecOC::MainFunctionRx(void){
-}
-
-FUNC(void, SECOC_CODE) class_SecOC::MainFunctionTx(void){
 }
 
 /*****************************************************/
