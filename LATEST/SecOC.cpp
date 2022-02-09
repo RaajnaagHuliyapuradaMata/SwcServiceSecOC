@@ -9,8 +9,7 @@
 #include "SecOC.h"
 
 #include "SecOC_EcuM.h"
-#include "SecOCRx_SchM.h"
-#include "SecOCTx_SchM.h"
+#include "SecOC_SchM.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -37,27 +36,30 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_SecOC_EcuM SecOC_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_SecOC = &SecOC_EcuM;
-class_SecOCRx_SchM SecOCRx_SchM;
-class_SchM_Client *SchM_Client_ptr_SecOCRx = &SecOCRx_SchM;
-class_SecOCTx_SchM SecOCTx_SchM;
-class_SchM_Client *SchM_Client_ptr_SecOCTx = &SecOCTx_SchM;
+class_SecOC_EcuM_Init SecOC_EcuM_Init;
+class_SecOC_EcuM_DeInit SecOC_EcuM_DeInit;
+class_SecOCRx_SchM_Main SecOCRx_SchM_Main;
+class_SecOCTx_SchM_Main SecOCTx_SchM_Main;
 class_SecOC SecOC;
+
+class_EcuM_Init_Client *EcuM_Init_Client_ptr_SecOC = &SecOC_EcuM_Init;
+class_EcuM_DeInit_Client *EcuM_DeInit_Client_ptr_SecOC = &SecOC_EcuM_DeInit;
+class_SchM_Main_Client *SchM_Main_Client_ptr_SecOCRx = &SecOCRx_SchM_Main;
+class_SchM_Main_Client *SchM_Main_Client_ptr_SecOCTx = &SecOCTx_SchM_Main;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, SECOC_CODE) class_SecOC_EcuM::InitFunction(void){
+FUNC(void, SECOC_CODE) class_SecOC_EcuM_Init::InitFunction(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_EcuM::DeInitFunction(void){
+FUNC(void, SECOC_CODE) class_SecOC_EcuM_DeInit::DeInitFunction(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOCRx_SchM::MainFunction(void){
+FUNC(void, SECOC_CODE) class_SecOCRx_SchM_Main::MainFunction(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOCTx_SchM::MainFunction(void){
+FUNC(void, SECOC_CODE) class_SecOCTx_SchM_Main::MainFunction(void){
 }
 
 FUNC(void, SECOC_CODE) class_SecOC::GetVersionInfo(void){
