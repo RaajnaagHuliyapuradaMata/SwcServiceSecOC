@@ -6,15 +6,12 @@
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "SecOC.h"
+#include "module.h"
 
-#include "SecOC_EcuM.h"
-#include "SecOC_SchM.h"
+#include "SecOC_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
-/*****************************************************/
-
 /*****************************************************/
 
 /*****************************************************/
@@ -24,6 +21,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class module_SecOC : public class_module{
+   public:
+      FUNC(void, SECOC_CODE) InitFunction   (void);
+      FUNC(void, SECOC_CODE) DeInitFunction (void);
+      FUNC(void, SECOC_CODE) MainFunction   (void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -36,99 +39,91 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_SecOC_EcuM_Init SecOC_EcuM_Init;
-class_SecOC_EcuM_DeInit SecOC_EcuM_DeInit;
-class_SecOCRx_SchM_Main SecOCRx_SchM_Main;
-class_SecOCTx_SchM_Main SecOCTx_SchM_Main;
-class_SecOC SecOC;
+module_SecOC SecOC;
 
-class_EcuM_Init_Client *EcuM_Init_Client_ptr_SecOC = &SecOC_EcuM_Init;
-class_EcuM_DeInit_Client *EcuM_DeInit_Client_ptr_SecOC = &SecOC_EcuM_DeInit;
-class_SchM_Main_Client *SchM_Main_Client_ptr_SecOCRx = &SecOCRx_SchM_Main;
-class_SchM_Main_Client *SchM_Main_Client_ptr_SecOCTx = &SecOCTx_SchM_Main;
+class_EcuM_Client *EcuM_Client_ptr_SecOC = &SecOC;
+class_SchM_Client *SchM_Client_ptr_SecOC = &SecOC;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, SECOC_CODE) class_SecOC_EcuM_Init::InitFunction(void){
+FUNC(void, SECOC_CODE) module_SecOC::InitFunction(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_EcuM_DeInit::DeInitFunction(void){
+FUNC(void, SECOC_CODE) module_SecOC::DeInitFunction(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOCRx_SchM_Main::MainFunction(void){
+FUNC(void, SECOC_CODE) module_SecOC::MainFunction(void){
+//TBD MainFunctionRouteSignals, MainFunctionRx, MainFunctionTx
 }
 
-FUNC(void, SECOC_CODE) class_SecOCTx_SchM_Main::MainFunction(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::GetVersionInfo(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::GetVersionInfo(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::IfTransmit(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::IfTransmit(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::TpTransmit(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::TpTransmit(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::CancelReceive(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::CancelReceive(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::IfCancelTransmit(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::IfCancelTransmit(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::TpCancelTransmit(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::TpCancelTransmit(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::ChangeParameter(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::ChangeParameter(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::AssociateKey(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::AssociateKey(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::FreshnessValueRead(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::FreshnessValueRead(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::FreshnessValueWrite(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::FreshnessValueWrite(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::CbIfRxIndication(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::CbIfRxIndication(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::CbTpRxIndication(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::CbTpRxIndication(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::CbIfTxConfirmation(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::CbIfTxConfirmation(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::CbTpTxConfirmation(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::CbTpTxConfirmation(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::CbTriggerTransmit(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::CbTriggerTransmit(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::CbCopyRxData(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::CbCopyRxData(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::CbCopyTxData(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::CbCopyTxData(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::CbStartOfReception(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::CbStartOfReception(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::CalloutGetRxFreshness(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::CalloutGetRxFreshness(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::CalloutGetRxFreshnessAuchData(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::CalloutGetRxFreshnessAuchData(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::CalloutGetTxFreshness(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::CalloutGetTxFreshness(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::CalloutGetTxFreshnessTruncData(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC::CalloutGetTxFreshnessTruncData(void){
-}
-
-FUNC(void, SECOC_CODE) class_SecOC::CalloutSPduTxConfirmation(void){
+FUNC(void, SECOC_CODE) class_SecOC_Unused::CalloutSPduTxConfirmation(void){
 }
 
 /*****************************************************/
