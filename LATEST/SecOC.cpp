@@ -41,8 +41,8 @@ class module_SecOC : public class_module{
 /*****************************************************/
 module_SecOC SecOC;
 
-class_EcuM_Client *EcuM_Client_ptr_SecOC = &SecOC;
-class_SchM_Client *SchM_Client_ptr_SecOC = &SecOC;
+//class_EcuM_Client *EcuM_Client_ptr_SecOC = &SecOC;
+//class_SchM_Client *SchM_Client_ptr_SecOC = &SecOC;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
