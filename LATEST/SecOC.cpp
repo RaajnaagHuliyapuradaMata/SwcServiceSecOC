@@ -7,7 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-
+#include "SecOC_EcuM.h"
+#include "SecOC_SchM.h"
 #include "SecOC_Unused.h"
 
 /*****************************************************/
@@ -21,11 +22,18 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class module_SecOC : public class_module{
+class module_SecOC:
+      public abstract_module
+   ,  public interface_SecOC_EcuM
+   ,  public interface_SecOC_SchM
+{
    public:
-      FUNC(void, SECOC_CODE) InitFunction   (void);
-      FUNC(void, SECOC_CODE) DeInitFunction (void);
-      FUNC(void, SECOC_CODE) MainFunction   (void);
+      FUNC(void, SECOC_CODE) InitFunction             (void);
+      FUNC(void, SECOC_CODE) DeInitFunction           (void);
+      FUNC(void, SECOC_CODE) MainFunction             (void);
+      FUNC(void, SECOC_CODE) MainFunctionRouteSignals (void);
+      FUNC(void, SECOC_CODE) MainFunctionRx           (void);
+      FUNC(void, SECOC_CODE) MainFunctionTx           (void);
 };
 
 /*****************************************************/
@@ -41,8 +49,8 @@ class module_SecOC : public class_module{
 /*****************************************************/
 module_SecOC SecOC;
 
-//class_EcuM_Client *EcuM_Client_ptr_SecOC = &SecOC;
-//class_SchM_Client *SchM_Client_ptr_SecOC = &SecOC;
+interface_SecOC_EcuM *EcuM_Client_ptr_SecOC = &SecOC;
+interface_SecOC_SchM *SchM_Client_ptr_SecOC = &SecOC;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
@@ -54,7 +62,15 @@ FUNC(void, SECOC_CODE) module_SecOC::DeInitFunction(void){
 }
 
 FUNC(void, SECOC_CODE) module_SecOC::MainFunction(void){
-//TBD MainFunctionRouteSignals, MainFunctionRx, MainFunctionTx
+}
+
+FUNC(void, SECOC_CODE) module_SecOC::MainFunctionRouteSignals(void){
+}
+
+FUNC(void, SECOC_CODE) module_SecOC::MainFunctionRx(void){
+}
+
+FUNC(void, SECOC_CODE) module_SecOC::MainFunctionTx(void){
 }
 
 FUNC(void, SECOC_CODE) class_SecOC_Unused::GetVersionInfo(void){

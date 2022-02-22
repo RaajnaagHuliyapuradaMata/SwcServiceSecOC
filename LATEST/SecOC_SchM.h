@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : SecOC_SchM.h                           */
+/* File   : SecOC_SchM.h                             */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -22,14 +22,14 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_SecOCRx_SchM : public class_SchM_Client{
+class interface_SecOC_SchM : public interface_SchM_Client{
    public:
-      FUNC(void, SECOC_CODE) MainFunction(void);
-};
-
-class class_SecOCTx_SchM : public class_SchM_Client{
-   public:
-      FUNC(void, SECOC_CODE) MainFunction(void);
+/*****************************************************/
+/* FUNCTIONS                                         */
+/*****************************************************/
+      FUNC(void, SECOC_CODE) MainFunction   (void);
+      FUNC(void, SECOC_CODE) MainFunctionRx (void);
+      FUNC(void, SECOC_CODE) MainFunctionTx (void);
 };
 
 /*****************************************************/
@@ -43,12 +43,7 @@ class class_SecOCTx_SchM : public class_SchM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_SchM_Client *SchM_Client_ptr_SecOCRx;
-extern class_SchM_Client *SchM_Client_ptr_SecOCTx;
-
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
+extern interface_SecOC_SchM *SchM_Client_ptr_SecOC;
 
 /*****************************************************/
 /* EOF                                               */
