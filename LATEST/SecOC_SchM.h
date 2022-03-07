@@ -9,8 +9,6 @@
 /*****************************************************/
 #include "Compiler_Cfg_SecOC.h"
 
-#include "SchM_Client.h"
-
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -22,12 +20,11 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_SecOC_SchM : public interface_SchM_Client{
+class interface_SecOC_SchM{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, SECOC_CODE) MainFunction   (void);
       FUNC(void, SECOC_CODE) MainFunctionRx (void);
       FUNC(void, SECOC_CODE) MainFunctionTx (void);
 };

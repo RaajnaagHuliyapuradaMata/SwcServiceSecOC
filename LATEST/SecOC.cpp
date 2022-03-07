@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_SecOC:
       public abstract_module
-   ,  public interface_SecOC_EcuM
-   ,  public interface_SecOC_SchM
 {
    public:
       FUNC(void, SECOC_CODE) InitFunction             (void);
@@ -47,10 +45,9 @@ class module_SecOC:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_SecOC SecOC;
-
-interface_SecOC_EcuM *EcuM_Client_ptr_SecOC = &SecOC;
-interface_SecOC_SchM *SchM_Client_ptr_SecOC = &SecOC;
+module_SecOC   SecOC;
+infEcuMClient* gptrinfEcuMClient_SecOC = &SecOC;
+infSchMClient* gptrinfSchMClient_SecOC = &SecOC;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
