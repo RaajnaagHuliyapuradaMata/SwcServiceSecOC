@@ -40,7 +40,7 @@ class interface_SecOC_SchM{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_SecOC_SchM *SchM_Client_ptr_SecOC;
+extern infSchMClient *gptrinfSchMClient_SecOC;
 
 /*****************************************************/
 /* EOF                                               */
