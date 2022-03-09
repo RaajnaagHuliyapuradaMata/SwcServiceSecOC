@@ -20,7 +20,7 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_SecOC_SchM{
+class infSecOc_SchM{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
@@ -40,7 +40,8 @@ class interface_SecOC_SchM{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infSchMClient *gptrinfSchMClient_SecOC;
+extern infSchMClient* gptrinfSchMClient_SecOC;
+extern infSecOc_SchM* gptrinfSecOC_SchM;
 
 /*****************************************************/
 /* EOF                                               */
