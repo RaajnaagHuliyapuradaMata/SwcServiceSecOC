@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "SecOC_EcuM.h"
-#include "SecOC_SchM.h"
+#include "infSecOC_EcuM.h"
+#include "infSecOC_SchM.h"
 #include "SecOC_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_SecOC:
    public:
       FUNC(void, SECOC_CODE) InitFunction             (void);
       FUNC(void, SECOC_CODE) DeInitFunction           (void);
+      FUNC(void, SECOC_CODE) GetVersionInfo           (void);
       FUNC(void, SECOC_CODE) MainFunction             (void);
       FUNC(void, SECOC_CODE) MainFunctionRouteSignals (void);
       FUNC(void, SECOC_CODE) MainFunctionRx           (void);
@@ -47,6 +48,7 @@ class module_SecOC:
 /*****************************************************/
 module_SecOC   SecOC;
 infEcuMClient* gptrinfEcuMClient_SecOC = &SecOC;
+infDcmClient*  gptrinfDcmClient_SecOC  = &SecOC;
 infSchMClient* gptrinfSchMClient_SecOC = &SecOC;
 
 /*****************************************************/
@@ -56,6 +58,9 @@ FUNC(void, SECOC_CODE) module_SecOC::InitFunction(void){
 }
 
 FUNC(void, SECOC_CODE) module_SecOC::DeInitFunction(void){
+}
+
+FUNC(void, SECOC_CODE) module_SecOC::GetVersionInfo(void){
 }
 
 FUNC(void, SECOC_CODE) module_SecOC::MainFunction(void){
