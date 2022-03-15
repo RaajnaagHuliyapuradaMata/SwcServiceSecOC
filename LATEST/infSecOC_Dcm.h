@@ -32,7 +32,7 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern infDcmClient* gptrinfDcmClient_SecOC;
+extern CONSTP2VAR(infDcmClient, SECOC_VAR, SECOC_CONST) gptrinfDcmClient_SecOC;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
