@@ -6,9 +6,8 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "infSecOC_Version.h"
-
 #include "module.h"
+#include "infSecOC_Version.h"
 #include "infSecOC_EcuM.h"
 #include "infSecOC_Dcm.h"
 #include "infSecOC_SchM.h"
@@ -48,31 +47,20 @@ class module_SecOC:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-
-/******************************************************************************/
-/* EOF                                                                        */
-/******************************************************************************/
-
-
-/*****************************************************/
-/* OBJECTS                                           */
-/*****************************************************/
 VAR(module_SecOC, SECOC_VAR) SecOC;
 CONSTP2VAR(infEcuMClient, SECOC_VAR, SECOC_CONST) gptrinfEcuMClient_SecOC = &SecOC;
 CONSTP2VAR(infDcmClient,  SECOC_VAR, SECOC_CONST) gptrinfDcmClient_SecOC  = &SecOC;
 CONSTP2VAR(infSchMClient, SECOC_VAR, SECOC_CONST) gptrinfSchMClient_SecOC = &SecOC;
 
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
 FUNC(void, SECOC_CODE) module_SecOC::InitFunction(void){
+   SecOC.IsInitDone = E_OK;
 }
 
 FUNC(void, SECOC_CODE) module_SecOC::DeInitFunction(void){
+   SecOC.IsInitDone = E_NOT_OK;
 }
 
 FUNC(void, SECOC_CODE) module_SecOC::GetVersionInfo(void){
@@ -158,7 +146,7 @@ FUNC(void, SECOC_CODE) class_SecOC_Unused::CalloutGetTxFreshnessTruncData(void){
 FUNC(void, SECOC_CODE) class_SecOC_Unused::CalloutSPduTxConfirmation(void){
 }
 
-/*****************************************************/
-/* EOF                                               */
-/*****************************************************/
+/******************************************************************************/
+/* EOF                                                                        */
+/******************************************************************************/
 
