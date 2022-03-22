@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infSecOC_Version.h"
+#include "SecOC_Cfg.h"
 #include "infSecOC_EcuM.h"
 #include "infSecOC_Dcm.h"
 #include "infSecOC_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define SECOC_AR_RELEASE_MAJOR_VERSION                                         4
+#define SECOC_AR_RELEASE_MINOR_VERSION                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(SECOC_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible SECOC_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(SECOC_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible SECOC_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -64,6 +73,11 @@ FUNC(void, SECOC_CODE) module_SecOC::DeInitFunction(void){
 }
 
 FUNC(void, SECOC_CODE) module_SecOC::GetVersionInfo(void){
+#if(STD_ON == SecOC_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, SECOC_CODE) module_SecOC::MainFunction(void){
