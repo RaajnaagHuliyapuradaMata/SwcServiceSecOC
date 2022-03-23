@@ -43,6 +43,16 @@ class module_SecOC:
       FUNC(void, SECOC_CODE) MainFunctionRouteSignals (void);
       FUNC(void, SECOC_CODE) MainFunctionRx           (void);
       FUNC(void, SECOC_CODE) MainFunctionTx           (void);
+
+   private:
+      CONST(Std_TypeVersionInfo, SECOC_CONST) VersionInfo = {
+            0x0000
+         ,  0xFFFF
+         ,  0x01
+         ,  '0'
+         ,  '1'
+         ,  '0'
+      };
 };
 
 /******************************************************************************/
