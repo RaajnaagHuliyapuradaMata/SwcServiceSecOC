@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "SecOC_Cfg.h"
+#include "CfgSecOC.h"
 #include "infSecOC_EcuM.h"
 #include "infSecOC_Dcm.h"
 #include "infSecOC_SchM.h"
