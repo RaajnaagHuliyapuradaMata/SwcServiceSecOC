@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgSecOC.h"
-#include "infSecOC_EcuM.h"
-#include "infSecOC_Dcm.h"
-#include "infSecOC_SchM.h"
+#include "module.hpp"
+#include "CfgSecOC.hpp"
+#include "infSecOC_EcuM.hpp"
+#include "infSecOC_Dcm.hpp"
+#include "infSecOC_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -102,7 +102,7 @@ FUNC(void, SECOC_CODE) module_SecOC::MainFunctionRx(void){
 FUNC(void, SECOC_CODE) module_SecOC::MainFunctionTx(void){
 }
 
-#include "SecOC_Unused.h"
+#include "SecOC_Unused.hpp"
 
 FUNC(void, SECOC_CODE) class_SecOC_Unused::IfTransmit(void){
 }
