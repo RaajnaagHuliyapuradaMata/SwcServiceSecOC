@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgSecOC.hpp"
 #include "infSecOC_EcuM.hpp"
 #include "infSecOC_Dcm.hpp"
 #include "infSecOC_SchM.hpp"
@@ -36,40 +35,44 @@ class module_SecOC:
       public abstract_module
 {
    public:
+      module_SecOC(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, SECOC_CODE) InitFunction             (void);
       FUNC(void, SECOC_CODE) DeInitFunction           (void);
-      FUNC(void, SECOC_CODE) GetVersionInfo           (void);
       FUNC(void, SECOC_CODE) MainFunction             (void);
+
       FUNC(void, SECOC_CODE) MainFunctionRouteSignals (void);
       FUNC(void, SECOC_CODE) MainFunctionRx           (void);
       FUNC(void, SECOC_CODE) MainFunctionTx           (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, SECOC_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_SecOC, SECOC_VAR) SecOC;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, SECOC_VAR, SECOC_CONST) gptrinfEcuMClient_SecOC = &SecOC;
+CONSTP2VAR(infDcmClient,  SECOC_VAR, SECOC_CONST) gptrinfDcmClient_SecOC  = &SecOC;
+CONSTP2VAR(infSchMClient, SECOC_VAR, SECOC_CONST) gptrinfSchMClient_SecOC = &SecOC;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgSecOC.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_SecOC, SECOC_VAR) SecOC;
-CONSTP2VAR(infEcuMClient, SECOC_VAR, SECOC_CONST) gptrinfEcuMClient_SecOC = &SecOC;
-CONSTP2VAR(infDcmClient,  SECOC_VAR, SECOC_CONST) gptrinfDcmClient_SecOC  = &SecOC;
-CONSTP2VAR(infSchMClient, SECOC_VAR, SECOC_CONST) gptrinfSchMClient_SecOC = &SecOC;
+VAR(module_SecOC, SECOC_VAR) SecOC(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -80,14 +83,6 @@ FUNC(void, SECOC_CODE) module_SecOC::InitFunction(void){
 
 FUNC(void, SECOC_CODE) module_SecOC::DeInitFunction(void){
    SecOC.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, SECOC_CODE) module_SecOC::GetVersionInfo(void){
-#if(STD_ON == SecOC_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, SECOC_CODE) module_SecOC::MainFunction(void){
