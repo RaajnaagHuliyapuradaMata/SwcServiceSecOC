@@ -6,7 +6,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.hpp"
+#include "Module.hpp"
 #include "infSecOC_EcuM.hpp"
 #include "infSecOC_Dcm.hpp"
 #include "infSecOC_SchM.hpp"
@@ -37,6 +37,9 @@ class module_SecOC:
    public:
       module_SecOC(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
+      FUNC(void, _CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      );
       FUNC(void, SECOC_CODE) InitFunction             (void);
       FUNC(void, SECOC_CODE) DeInitFunction           (void);
       FUNC(void, SECOC_CODE) MainFunction             (void);
@@ -77,7 +80,19 @@ VAR(module_SecOC, SECOC_VAR) SecOC(
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, SECOC_CODE) module_SecOC::InitFunction(void){
+FUNC(void, SECOC_CODE) module_SecOC::InitFunction(
+   CONSTP2CONST(CfgSecOC_Type, CFGSECOC_CONFIG_DATA, CFGSECOC_APPL_CONST) lptrCfgSecOC
+){
+   if(NULL_PTR == lptrCfgSecOC){
+#if(STD_ON == SecOC_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+// check lptrCfgSecOC for memory faults
+// use PBcfg_SecOC as back-up configuration
+   }
    SecOC.IsInitDone = E_OK;
 }
 
