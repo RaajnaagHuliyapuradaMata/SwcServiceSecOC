@@ -37,10 +37,9 @@ class module_SecOC:
    public:
       module_SecOC(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, SECOC_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, SECOC_CONFIG_DATA, SECOC_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, SECOC_CODE) InitFunction             (void);
       FUNC(void, SECOC_CODE) DeInitFunction           (void);
       FUNC(void, SECOC_CODE) MainFunction             (void);
 
@@ -81,23 +80,39 @@ VAR(module_SecOC, SECOC_VAR) SecOC(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, SECOC_CODE) module_SecOC::InitFunction(
-   CONSTP2CONST(CfgSecOC_Type, CFGSECOC_CONFIG_DATA, CFGSECOC_APPL_CONST) lptrCfgSecOC
+   CONSTP2CONST(CfgModule_TypeAbstract, SECOC_CONFIG_DATA, SECOC_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgSecOC){
+   if(E_OK == IsInitDone){
 #if(STD_ON == SecOC_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgSecOC for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == SecOC_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_SecOC as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   SecOC.IsInitDone = E_OK;
 }
 
 FUNC(void, SECOC_CODE) module_SecOC::DeInitFunction(void){
-   SecOC.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == SecOC_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, SECOC_CODE) module_SecOC::MainFunction(void){
