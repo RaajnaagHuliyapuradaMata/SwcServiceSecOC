@@ -82,6 +82,7 @@ VAR(module_SecOC, SECOC_VAR) SecOC(
 FUNC(void, SECOC_CODE) module_SecOC::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, SECOC_CONFIG_DATA, SECOC_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == SecOC_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == SecOC_DevErrorDetect)
       Det_ReportError(
@@ -89,6 +90,7 @@ FUNC(void, SECOC_CODE) module_SecOC::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == SecOC_DevErrorDetect)
          Det_ReportError(
@@ -100,10 +102,13 @@ FUNC(void, SECOC_CODE) module_SecOC::InitFunction(
 // use PBcfg_SecOC as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == SecOC_InitCheck)
    }
+#endif
 }
 
 FUNC(void, SECOC_CODE) module_SecOC::DeInitFunction(void){
+#if(STD_ON == SecOC_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == SecOC_DevErrorDetect)
       Det_ReportError(
@@ -111,11 +116,26 @@ FUNC(void, SECOC_CODE) module_SecOC::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == SecOC_InitCheck)
    }
+#endif
 }
 
 FUNC(void, SECOC_CODE) module_SecOC::MainFunction(void){
+#if(STD_ON == SecOC_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == SecOC_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == SecOC_InitCheck)
+   }
+#endif
 }
 
 FUNC(void, SECOC_CODE) module_SecOC::MainFunctionRouteSignals(void){
