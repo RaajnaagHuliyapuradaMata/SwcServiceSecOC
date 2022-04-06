@@ -14,18 +14,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define SECOC_AR_RELEASE_MAJOR_VERSION                                         4
-#define SECOC_AR_RELEASE_MINOR_VERSION                                         3
+#define SECOC_AR_RELEASE_VERSION_MAJOR                                         4
+#define SECOC_AR_RELEASE_VERSION_MINOR                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(SECOC_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
-   #error "Incompatible SECOC_AR_RELEASE_MAJOR_VERSION!"
+#if(SECOC_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible SECOC_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(SECOC_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
-   #error "Incompatible SECOC_AR_RELEASE_MINOR_VERSION!"
+#if(SECOC_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible SECOC_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -67,8 +67,10 @@ CONSTP2VAR(infSchMClient, SECOC_VAR, SECOC_CONST) gptrinfSchMClient_SecOC = &Sec
 /******************************************************************************/
 VAR(module_SecOC, SECOC_VAR) SecOC(
    {
-         0x0000
-      ,  0xFFFF
+         SECOC_AR_RELEASE_VERSION_MAJOR
+      ,  SECOC_AR_RELEASE_VERSION_MINOR
+      ,  0x00
+      ,  0xFF
       ,  0x01
       ,  '0'
       ,  '1'
