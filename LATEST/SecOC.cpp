@@ -105,8 +105,8 @@ FUNC(void, SECOC_CODE) module_SecOC::InitFunction(
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfg_CanIf as back-up configuration
-            lptrCfg = PBcfg_CanIf;
+// use PBcfgCanIf as back-up configuration
+            lptrCfg = &PBcfgSecOC;
          }
       }
       IsInitDone = E_OK;
