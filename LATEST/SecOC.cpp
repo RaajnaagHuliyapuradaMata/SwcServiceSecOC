@@ -31,8 +31,35 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_SecOC_Functionality{
+   public:
+      FUNC(void, SECOC_CODE) IfTransmit                     (void);
+      FUNC(void, SECOC_CODE) TpTransmit                     (void);
+      FUNC(void, SECOC_CODE) CancelReceive                  (void);
+      FUNC(void, SECOC_CODE) IfCancelTransmit               (void);
+      FUNC(void, SECOC_CODE) TpCancelTransmit               (void);
+      FUNC(void, SECOC_CODE) ChangeParameter                (void);
+      FUNC(void, SECOC_CODE) AssociateKey                   (void);
+      FUNC(void, SECOC_CODE) FreshnessValueRead             (void);
+      FUNC(void, SECOC_CODE) FreshnessValueWrite            (void);
+      FUNC(void, SECOC_CODE) CbIfRxIndication               (void);
+      FUNC(void, SECOC_CODE) CbTpRxIndication               (void);
+      FUNC(void, SECOC_CODE) CbIfTxConfirmation             (void);
+      FUNC(void, SECOC_CODE) CbTpTxConfirmation             (void);
+      FUNC(void, SECOC_CODE) CbTriggerTransmit              (void);
+      FUNC(void, SECOC_CODE) CbCopyRxData                   (void);
+      FUNC(void, SECOC_CODE) CbCopyTxData                   (void);
+      FUNC(void, SECOC_CODE) CbStartOfReception             (void);
+      FUNC(void, SECOC_CODE) CalloutGetRxFreshness          (void);
+      FUNC(void, SECOC_CODE) CalloutGetRxFreshnessAuchData  (void);
+      FUNC(void, SECOC_CODE) CalloutGetTxFreshness          (void);
+      FUNC(void, SECOC_CODE) CalloutGetTxFreshnessTruncData (void);
+      FUNC(void, SECOC_CODE) CalloutSPduTxConfirmation      (void);
+};
+
 class module_SecOC:
       public abstract_module
+   ,  public class_SecOC_Functionality
 {
    public:
       module_SecOC(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -88,6 +115,10 @@ FUNC(void, SECOC_CODE) module_SecOC::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == SecOC_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -96,6 +127,10 @@ FUNC(void, SECOC_CODE) module_SecOC::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == SecOC_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -120,6 +155,10 @@ FUNC(void, SECOC_CODE) module_SecOC::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == SecOC_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -136,6 +175,10 @@ FUNC(void, SECOC_CODE) module_SecOC::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == SecOC_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -155,96 +198,70 @@ FUNC(void, SECOC_CODE) module_SecOC::MainFunctionRx(void){
 FUNC(void, SECOC_CODE) module_SecOC::MainFunctionTx(void){
 }
 
-class class_SecOC_Unused{
-   public:
-      FUNC(void, SECOC_CODE) IfTransmit                     (void);
-      FUNC(void, SECOC_CODE) TpTransmit                     (void);
-      FUNC(void, SECOC_CODE) CancelReceive                  (void);
-      FUNC(void, SECOC_CODE) IfCancelTransmit               (void);
-      FUNC(void, SECOC_CODE) TpCancelTransmit               (void);
-      FUNC(void, SECOC_CODE) ChangeParameter                (void);
-      FUNC(void, SECOC_CODE) AssociateKey                   (void);
-      FUNC(void, SECOC_CODE) FreshnessValueRead             (void);
-      FUNC(void, SECOC_CODE) FreshnessValueWrite            (void);
-      FUNC(void, SECOC_CODE) CbIfRxIndication               (void);
-      FUNC(void, SECOC_CODE) CbTpRxIndication               (void);
-      FUNC(void, SECOC_CODE) CbIfTxConfirmation             (void);
-      FUNC(void, SECOC_CODE) CbTpTxConfirmation             (void);
-      FUNC(void, SECOC_CODE) CbTriggerTransmit              (void);
-      FUNC(void, SECOC_CODE) CbCopyRxData                   (void);
-      FUNC(void, SECOC_CODE) CbCopyTxData                   (void);
-      FUNC(void, SECOC_CODE) CbStartOfReception             (void);
-      FUNC(void, SECOC_CODE) CalloutGetRxFreshness          (void);
-      FUNC(void, SECOC_CODE) CalloutGetRxFreshnessAuchData  (void);
-      FUNC(void, SECOC_CODE) CalloutGetTxFreshness          (void);
-      FUNC(void, SECOC_CODE) CalloutGetTxFreshnessTruncData (void);
-      FUNC(void, SECOC_CODE) CalloutSPduTxConfirmation      (void);
-};
-
-FUNC(void, SECOC_CODE) class_SecOC_Unused::IfTransmit(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::IfTransmit(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::TpTransmit(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::TpTransmit(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::CancelReceive(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::CancelReceive(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::IfCancelTransmit(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::IfCancelTransmit(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::TpCancelTransmit(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::TpCancelTransmit(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::ChangeParameter(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::ChangeParameter(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::AssociateKey(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::AssociateKey(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::FreshnessValueRead(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::FreshnessValueRead(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::FreshnessValueWrite(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::FreshnessValueWrite(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::CbIfRxIndication(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::CbIfRxIndication(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::CbTpRxIndication(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::CbTpRxIndication(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::CbIfTxConfirmation(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::CbIfTxConfirmation(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::CbTpTxConfirmation(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::CbTpTxConfirmation(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::CbTriggerTransmit(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::CbTriggerTransmit(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::CbCopyRxData(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::CbCopyRxData(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::CbCopyTxData(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::CbCopyTxData(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::CbStartOfReception(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::CbStartOfReception(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::CalloutGetRxFreshness(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::CalloutGetRxFreshness(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::CalloutGetRxFreshnessAuchData(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::CalloutGetRxFreshnessAuchData(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::CalloutGetTxFreshness(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::CalloutGetTxFreshness(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::CalloutGetTxFreshnessTruncData(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::CalloutGetTxFreshnessTruncData(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Unused::CalloutSPduTxConfirmation(void){
+FUNC(void, SECOC_CODE) class_SecOC_Functionality::CalloutSPduTxConfirmation(void){
 }
 
 /******************************************************************************/
