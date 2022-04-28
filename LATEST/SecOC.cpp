@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "SecOC_core.hpp"
 #include "infSecOC_EcuM.hpp"
 #include "infSecOC_Dcm.hpp"
 #include "infSecOC_SchM.hpp"
