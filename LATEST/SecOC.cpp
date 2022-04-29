@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgSecOC.hpp"
 #include "SecOC_core.hpp"
-#include "infSecOC_EcuM.hpp"
-#include "infSecOC_Dcm.hpp"
-#include "infSecOC_SchM.hpp"
+#include "infSecOC.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_SecOC:
       );
       FUNC(void, SECOC_CODE) DeInitFunction           (void);
       FUNC(void, SECOC_CODE) MainFunction             (void);
+      SECOC_CORE_FUNCTIONALITIES
 
       FUNC(void, SECOC_CODE) MainFunctionRouteSignals (void);
       FUNC(void, SECOC_CODE) MainFunctionRx           (void);
@@ -62,7 +62,6 @@ CONSTP2VAR(infSchMClient, SECOC_VAR, SECOC_CONST) gptrinfSchMClient_SecOC = &Sec
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgSecOC.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */

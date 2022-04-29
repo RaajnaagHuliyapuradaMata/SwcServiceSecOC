@@ -12,7 +12,7 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define SECOC_COREFUNCTIONALITIES                                              \
+#define SECOC_CORE_FUNCTIONALITIES                                             \
               FUNC(void, SECOC_CODE) IfTransmit                     (void);     \
               FUNC(void, SECOC_CODE) TpTransmit                     (void);     \
               FUNC(void, SECOC_CODE) CancelReceive                  (void);     \
@@ -36,7 +36,7 @@
               FUNC(void, SECOC_CODE) CalloutGetTxFreshnessTruncData (void);     \
               FUNC(void, SECOC_CODE) CalloutSPduTxConfirmation      (void);     \
 
-#define SECOC_COREFUNCTIONALITIES_VIRTUAL                                      \
+#define SECOC_CORE_FUNCTIONALITIES_VIRTUAL                                     \
       virtual FUNC(void, SECOC_CODE) IfTransmit                     (void) = 0; \
       virtual FUNC(void, SECOC_CODE) TpTransmit                     (void) = 0; \
       virtual FUNC(void, SECOC_CODE) CancelReceive                  (void) = 0; \
@@ -69,7 +69,7 @@
 /******************************************************************************/
 class class_SecOC_Functionality{
    public:
-      SECOC_COREFUNCTIONALITIES_VIRTUAL
+      SECOC_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/
