@@ -172,70 +172,70 @@ FUNC(void, SECOC_CODE) module_SecOC::MainFunctionRx(void){
 FUNC(void, SECOC_CODE) module_SecOC::MainFunctionTx(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::IfTransmit(void){
+FUNC(void, SECOC_CODE) module_SecOC::IfTransmit(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::TpTransmit(void){
+FUNC(void, SECOC_CODE) module_SecOC::TpTransmit(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::CancelReceive(void){
+FUNC(void, SECOC_CODE) module_SecOC::CancelReceive(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::IfCancelTransmit(void){
+FUNC(void, SECOC_CODE) module_SecOC::IfCancelTransmit(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::TpCancelTransmit(void){
+FUNC(void, SECOC_CODE) module_SecOC::TpCancelTransmit(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::ChangeParameter(void){
+FUNC(void, SECOC_CODE) module_SecOC::ChangeParameter(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::AssociateKey(void){
+FUNC(void, SECOC_CODE) module_SecOC::AssociateKey(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::FreshnessValueRead(void){
+FUNC(void, SECOC_CODE) module_SecOC::FreshnessValueRead(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::FreshnessValueWrite(void){
+FUNC(void, SECOC_CODE) module_SecOC::FreshnessValueWrite(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::CbIfRxIndication(void){
+FUNC(void, SECOC_CODE) module_SecOC::CbIfRxIndication(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::CbTpRxIndication(void){
+FUNC(void, SECOC_CODE) module_SecOC::CbTpRxIndication(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::CbIfTxConfirmation(void){
+FUNC(void, SECOC_CODE) module_SecOC::CbIfTxConfirmation(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::CbTpTxConfirmation(void){
+FUNC(void, SECOC_CODE) module_SecOC::CbTpTxConfirmation(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::CbTriggerTransmit(void){
+FUNC(void, SECOC_CODE) module_SecOC::CbTriggerTransmit(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::CbCopyRxData(void){
+FUNC(void, SECOC_CODE) module_SecOC::CbCopyRxData(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::CbCopyTxData(void){
+FUNC(void, SECOC_CODE) module_SecOC::CbCopyTxData(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::CbStartOfReception(void){
+FUNC(void, SECOC_CODE) module_SecOC::CbStartOfReception(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::CalloutGetRxFreshness(void){
+FUNC(void, SECOC_CODE) module_SecOC::CalloutGetRxFreshness(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::CalloutGetRxFreshnessAuchData(void){
+FUNC(void, SECOC_CODE) module_SecOC::CalloutGetRxFreshnessAuchData(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::CalloutGetTxFreshness(void){
+FUNC(void, SECOC_CODE) module_SecOC::CalloutGetTxFreshness(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::CalloutGetTxFreshnessTruncData(void){
+FUNC(void, SECOC_CODE) module_SecOC::CalloutGetTxFreshnessTruncData(void){
 }
 
-FUNC(void, SECOC_CODE) class_SecOC_Functionality::CalloutSPduTxConfirmation(void){
+FUNC(void, SECOC_CODE) module_SecOC::CalloutSPduTxConfirmation(void){
 }
 
 /******************************************************************************/
