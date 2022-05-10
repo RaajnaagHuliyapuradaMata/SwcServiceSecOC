@@ -93,7 +93,10 @@ FUNC(void, SECOC_CODE) module_SecOC::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, SECOC_CONFIG_DATA, SECOC_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == SecOC_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -131,7 +134,10 @@ FUNC(void, SECOC_CODE) module_SecOC::InitFunction(
 
 FUNC(void, SECOC_CODE) module_SecOC::DeInitFunction(void){
 #if(STD_ON == SecOC_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == SecOC_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -151,7 +157,10 @@ FUNC(void, SECOC_CODE) module_SecOC::DeInitFunction(void){
 
 FUNC(void, SECOC_CODE) module_SecOC::MainFunction(void){
 #if(STD_ON == SecOC_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == SecOC_InitCheck)
    }
