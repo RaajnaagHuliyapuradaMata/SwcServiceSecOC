@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgSecOC.hpp"
 #include "SecOC_core.hpp"
-#include "infSecOC.hpp"
+#include "infSecOC_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_SecOC:
+   INTERFACES_EXPORTED_SECOC
       public abstract_module
    ,  public class_SecOC_Functionality
 {
