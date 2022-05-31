@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_SecOC:
-   INTERFACES_EXPORTED_SECOC
+      INTERFACES_EXPORTED_SECOC
       public abstract_module
    ,  public class_SecOC_Functionality
 {
