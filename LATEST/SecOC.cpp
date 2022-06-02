@@ -76,6 +76,10 @@ CONSTP2VAR(infSchMClient, SECOC_VAR, SECOC_CONST) gptrinfSchMClient_SecOC = &Sec
 /******************************************************************************/
 VAR(module_SecOC, SECOC_VAR) SecOC(
    {
+#if(STD_ON == _ReSIM)
+// char strModuleName[6];
+#else
+#endif
          SECOC_AR_RELEASE_VERSION_MAJOR
       ,  SECOC_AR_RELEASE_VERSION_MINOR
       ,  0x00
