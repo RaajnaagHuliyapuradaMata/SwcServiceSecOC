@@ -10,6 +10,7 @@
 #include "CfgSecOC.hpp"
 #include "SecOC_core.hpp"
 #include "infSecOC_Exp.hpp"
+#include "infSecOC_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
