@@ -134,7 +134,9 @@ FUNC(void, SECOC_CODE) module_SecOC::InitFunction(
 #endif
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::DeInitFunction(void){
+FUNC(void, SECOC_CODE) module_SecOC::DeInitFunction(
+   void
+){
 #if(STD_ON == SecOC_InitCheck)
    if(
          E_OK
@@ -157,7 +159,9 @@ FUNC(void, SECOC_CODE) module_SecOC::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::MainFunction(void){
+FUNC(void, SECOC_CODE) module_SecOC::MainFunction(
+   void
+){
 #if(STD_ON == SecOC_InitCheck)
    if(
          E_OK
@@ -179,79 +183,129 @@ FUNC(void, SECOC_CODE) module_SecOC::MainFunction(void){
 #endif
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::MainFunctionRouteSignals(void){
+FUNC(void, SECOC_CODE) module_SecOC::MainFunctionRouteSignals(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::MainFunctionRx(void){
+FUNC(void, SECOC_CODE) module_SecOC::MainFunctionRx(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::MainFunctionTx(void){
+FUNC(void, SECOC_CODE) module_SecOC::MainFunctionTx(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::IfTransmit(void){
+FUNC(void, SECOC_CODE) module_SecOC::IfTransmit(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::TpTransmit(void){
+FUNC(void, SECOC_CODE) module_SecOC::TpTransmit(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::CancelReceive(void){
+FUNC(void, SECOC_CODE) module_SecOC::CancelReceive(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::IfCancelTransmit(void){
+FUNC(void, SECOC_CODE) module_SecOC::IfCancelTransmit(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::TpCancelTransmit(void){
+FUNC(void, SECOC_CODE) module_SecOC::TpCancelTransmit(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::ChangeParameter(void){
+FUNC(void, SECOC_CODE) module_SecOC::ChangeParameter(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::AssociateKey(void){
+FUNC(void, SECOC_CODE) module_SecOC::AssociateKey(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::FreshnessValueRead(void){
+FUNC(void, SECOC_CODE) module_SecOC::FreshnessValueRead(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::FreshnessValueWrite(void){
+FUNC(void, SECOC_CODE) module_SecOC::FreshnessValueWrite(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::CbIfRxIndication(void){
+FUNC(void, SECOC_CODE) module_SecOC::CbIfRxIndication(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::CbTpRxIndication(void){
+FUNC(void, SECOC_CODE) module_SecOC::CbTpRxIndication(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::CbIfTxConfirmation(void){
+FUNC(void, SECOC_CODE) module_SecOC::CbIfTxConfirmation(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::CbTpTxConfirmation(void){
+FUNC(void, SECOC_CODE) module_SecOC::CbTpTxConfirmation(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::CbTriggerTransmit(void){
+FUNC(void, SECOC_CODE) module_SecOC::CbTriggerTransmit(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::CbCopyRxData(void){
+FUNC(void, SECOC_CODE) module_SecOC::CbCopyRxData(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::CbCopyTxData(void){
+FUNC(void, SECOC_CODE) module_SecOC::CbCopyTxData(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::CbStartOfReception(void){
+FUNC(void, SECOC_CODE) module_SecOC::CbStartOfReception(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::CalloutGetRxFreshness(void){
+FUNC(void, SECOC_CODE) module_SecOC::CalloutGetRxFreshness(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::CalloutGetRxFreshnessAuchData(void){
+FUNC(void, SECOC_CODE) module_SecOC::CalloutGetRxFreshnessAuchData(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::CalloutGetTxFreshness(void){
+FUNC(void, SECOC_CODE) module_SecOC::CalloutGetTxFreshness(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::CalloutGetTxFreshnessTruncData(void){
+FUNC(void, SECOC_CODE) module_SecOC::CalloutGetTxFreshnessTruncData(
+   void
+){
 }
 
-FUNC(void, SECOC_CODE) module_SecOC::CalloutSPduTxConfirmation(void){
+FUNC(void, SECOC_CODE) module_SecOC::CalloutSPduTxConfirmation(
+   void
+){
 }
 
 /******************************************************************************/
