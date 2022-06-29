@@ -41,12 +41,8 @@ class module_SecOC:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-            Std_TypeReturn          IsInitDone{E_NOT_OK};
-      const CfgModule_TypeAbstract* lptrCfg{(CfgModule_TypeAbstract*)NULL_PTR};
 
    public:
-      module_SecOC(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
-      }
       FUNC(void, SECOC_CODE) InitFunction(
          CONSTP2CONST(CfgModule_TypeAbstract, SECOC_CONFIG_DATA, SECOC_APPL_CONST) lptrCfgModule
       );
@@ -75,18 +71,7 @@ CONSTP2VAR(infSchMClient, SECOC_VAR, SECOC_CONST) gptrinfSchMClient_SecOC = &Sec
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_SecOC, SECOC_VAR) SecOC(
-   {
-         SECOC_AR_RELEASE_VERSION_MAJOR
-      ,  SECOC_AR_RELEASE_VERSION_MINOR
-      ,  0x00
-      ,  0xFF
-      ,  0x01
-      ,  '0'
-      ,  '1'
-      ,  '0'
-   }
-);
+VAR(module_SecOC, SECOC_VAR) SecOC;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
