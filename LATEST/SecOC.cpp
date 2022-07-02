@@ -86,12 +86,7 @@ FUNC(void, SECOC_CODE) module_SecOC::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgSecOC;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == SecOC_DevErrorDetect)
