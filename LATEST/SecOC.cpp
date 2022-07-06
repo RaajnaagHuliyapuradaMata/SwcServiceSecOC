@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgSecOC.hpp"
-#include "SecOC_core.hpp"
-#include "infSecOC_Exp.hpp"
+#include "SecOC.hpp"
 #include "infSecOC_Imp.hpp"
 
 /******************************************************************************/
@@ -32,30 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_SecOC:
-      INTERFACES_EXPORTED_SECOC
-      public abstract_module
-   ,  public class_SecOC_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, SECOC_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, SECOC_CONFIG_DATA, SECOC_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, SECOC_CODE) DeInitFunction           (void);
-      FUNC(void, SECOC_CODE) MainFunction             (void);
-      SECOC_CORE_FUNCTIONALITIES
-
-      FUNC(void, SECOC_CODE) MainFunctionRouteSignals (void);
-      FUNC(void, SECOC_CODE) MainFunctionRx           (void);
-      FUNC(void, SECOC_CODE) MainFunctionTx           (void);
-};
-
-extern VAR(module_SecOC, SECOC_VAR) SecOC;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
