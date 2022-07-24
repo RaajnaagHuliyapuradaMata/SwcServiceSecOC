@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstSecOC.hpp"
 #include "CfgSecOC.hpp"
 #include "SecOC_core.hpp"
 #include "infSecOC_Exp.hpp"
@@ -31,13 +32,15 @@ class module_SecOC:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstSecOC_Type* lptrConst = (ConstSecOC_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, SECOC_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, SECOC_CONFIG_DATA, SECOC_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, SECOC_CONST,       SECOC_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   SECOC_CONFIG_DATA, SECOC_APPL_CONST) lptrCfgModule
       );
       FUNC(void, SECOC_CODE) DeInitFunction           (void);
       FUNC(void, SECOC_CODE) MainFunction             (void);
