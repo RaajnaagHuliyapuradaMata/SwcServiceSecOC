@@ -61,7 +61,7 @@ FUNC(void, SECOC_CODE) module_SecOC::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstSecOC_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
