@@ -21,7 +21,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 typedef enum{
-      SECOC_E_UNINIT
+      SERVICESECOC_E_UNINIT
 }ServiceSecOC_TypeServiceDetErrorCode;
 
 /******************************************************************************/

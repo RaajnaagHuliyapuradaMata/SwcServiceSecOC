@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define SECOC_AR_RELEASE_VERSION_MAJOR                                         4
-#define SECOC_AR_RELEASE_VERSION_MINOR                                         3
+#define SERVICESECOC_AR_RELEASE_VERSION_MAJOR                                         4
+#define SERVICESECOC_AR_RELEASE_VERSION_MINOR                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(SECOC_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible SECOC_AR_RELEASE_VERSION_MAJOR!"
+#if(SERVICESECOC_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible SERVICESECOC_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(SECOC_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible SECOC_AR_RELEASE_VERSION_MINOR!"
+#if(SERVICESECOC_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible SERVICESECOC_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_ServiceSecOC, SECOC_VAR) ServiceSecOC;
+VAR(module_ServiceSecOC, SERVICESECOC_VAR) ServiceSecOC;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, SECOC_CODE) module_ServiceSecOC::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, SECOC_CONST,       SECOC_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   SECOC_CONFIG_DATA, SECOC_APPL_CONST) lptrCfgModule
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, SERVICESECOC_CONST,       SERVICESECOC_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   SERVICESECOC_CONFIG_DATA, SERVICESECOC_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == ServiceSecOC_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, SECOC_CODE) module_ServiceSecOC::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  SECOC_E_UNINIT
+         ,  SERVICESECOC_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::DeInitFunction(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::DeInitFunction(
    void
 ){
 #if(STD_ON == ServiceSecOC_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, SECOC_CODE) module_ServiceSecOC::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  SECOC_E_UNINIT
+         ,  SERVICESECOC_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::MainFunction(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::MainFunction(
    void
 ){
 #if(STD_ON == ServiceSecOC_InitCheck)
@@ -132,134 +132,134 @@ FUNC(void, SECOC_CODE) module_ServiceSecOC::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  SECOC_E_UNINIT
+         ,  SERVICESECOC_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::MainFunctionRouteSignals(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::MainFunctionRouteSignals(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::MainFunctionRx(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::MainFunctionRx(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::MainFunctionTx(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::MainFunctionTx(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::IfTransmit(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::IfTransmit(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::TpTransmit(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::TpTransmit(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::McalCancelReceive(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::McalCancelReceive(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::IfMcalCancelTransmit(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::IfMcalCancelTransmit(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::TpMcalCancelTransmit(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::TpMcalCancelTransmit(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::ChangeParameter(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::ChangeParameter(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::AssociateKey(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::AssociateKey(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::McalFreshnessValueRead(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::McalFreshnessValueRead(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::McalFreshnessValueWrite(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::McalFreshnessValueWrite(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::CbIfRxIndication(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::CbIfRxIndication(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::CbTpRxIndication(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::CbTpRxIndication(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::CbIfTxConfirmation(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::CbIfTxConfirmation(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::CbTpTxConfirmation(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::CbTpTxConfirmation(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::CbTriggerTransmit(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::CbTriggerTransmit(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::CbCopyRxData(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::CbCopyRxData(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::CbCopyTxData(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::CbCopyTxData(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::CbStartOfReception(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::CbStartOfReception(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::CalloutGetRxMcalFreshness(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::CalloutGetRxMcalFreshness(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::CalloutGetRxMcalFreshnessAuchData(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::CalloutGetRxMcalFreshnessAuchData(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::CalloutGetTxMcalFreshness(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::CalloutGetTxMcalFreshness(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::CalloutGetTxMcalFreshnessTruncData(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::CalloutGetTxMcalFreshnessTruncData(
    void
 ){
 }
 
-FUNC(void, SECOC_CODE) module_ServiceSecOC::CalloutSPduTxConfirmation(
+FUNC(void, SERVICESECOC_CODE) module_ServiceSecOC::CalloutSPduTxConfirmation(
    void
 ){
 }

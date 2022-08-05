@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_ServiceSecOC:
-      INTERFACES_EXPORTED_SECOC
+      INTERFACES_EXMCALPORTED_SERVICESECOC
       public abstract_module
    ,  public class_ServiceSecOC_Functionality
 {
@@ -38,17 +38,17 @@ class module_ServiceSecOC:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(void, SECOC_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, SECOC_CONST,       SECOC_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   SECOC_CONFIG_DATA, SECOC_APPL_CONST) lptrCfgModule
+      FUNC(void, SERVICESECOC_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, SERVICESECOC_CONST,       SERVICESECOC_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   SERVICESECOC_CONFIG_DATA, SERVICESECOC_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, SECOC_CODE) DeInitFunction           (void);
-      FUNC(void, SECOC_CODE) MainFunction             (void);
-      SECOC_CORE_FUNCTIONALITIES
+      FUNC(void, SERVICESECOC_CODE) DeInitFunction           (void);
+      FUNC(void, SERVICESECOC_CODE) MainFunction             (void);
+      SERVICESECOC_CORE_FUNCTIONALITIES
 
-      FUNC(void, SECOC_CODE) MainFunctionRouteSignals (void);
-      FUNC(void, SECOC_CODE) MainFunctionRx           (void);
-      FUNC(void, SECOC_CODE) MainFunctionTx           (void);
+      FUNC(void, SERVICESECOC_CODE) MainFunctionRouteSignals (void);
+      FUNC(void, SERVICESECOC_CODE) MainFunctionRx           (void);
+      FUNC(void, SERVICESECOC_CODE) MainFunctionTx           (void);
 };
 
 /******************************************************************************/
@@ -62,7 +62,7 @@ class module_ServiceSecOC:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_ServiceSecOC, SECOC_VAR) ServiceSecOC;
+extern VAR(module_ServiceSecOC, SERVICESECOC_VAR) ServiceSecOC;
 
 /******************************************************************************/
 /* EOF                                                                        */
