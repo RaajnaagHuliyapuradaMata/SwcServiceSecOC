@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_ServiceSecOC:
-      INTERFACES_EXMCALPORTED_SERVICESECOC
+      INTERFACES_EXPORTED_SERVICESECOC
       public abstract_module
    ,  public class_ServiceSecOC_Functionality
 {
