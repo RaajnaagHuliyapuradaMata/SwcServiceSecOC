@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : ServiceSecOC.hpp                                                         */
+/* File   : ServiceSecOC.hpp                                                  */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstServiceSecOC.hpp"
+#include "infServiceSecOC_ServiceNvM_Types.hpp"
 #include "CfgServiceSecOC.hpp"
 #include "ServiceSecOC_core.hpp"
 #include "infServiceSecOC_Exp.hpp"
